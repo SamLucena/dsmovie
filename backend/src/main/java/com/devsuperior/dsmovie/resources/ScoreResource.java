@@ -1,7 +1,6 @@
 package com.devsuperior.dsmovie.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +18,8 @@ public class ScoreResource {
 	private ScoreService service;
 	
 	@PutMapping
-	public ResponseEntity<MovieDTO> saveScore(@RequestBody ScoreDTO dto){
+	public MovieDTO saveScore(@RequestBody ScoreDTO dto){
 		MovieDTO movieDTO = service.saveScore(dto);
-		return ResponseEntity.ok(movieDTO);
+		return movieDTO;
 	}
 }
